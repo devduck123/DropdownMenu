@@ -1,0 +1,58 @@
+/* Credits to Kevin Powell */
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+select {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    padding: 1em 4em 1em 1.5em;  
+    background: rgb(69 69 69);
+    color: white;
+    border: 0;      /* for Mozilla Firefox */
+}
+
+.menu {
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block; /* span is inline by default */
+    background: darkolivegreen;
+    height: 100%; /* matches parent .menu */
+    width: 4em;
+    pointer-events: none; /* makes the arrow clickable */
+}
+
+/* Kevin Powell especially explains this part in a video */
+
+.arrow::before,
+.arrow::after {
+    --size: 0.65em;  /* custom property value */
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.arrow::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid rgba(255, 255, 255, 0.5);
+    top: 48%;
+}
+
+.arrow::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid rgba(255, 255, 255, 0.5);
+    top: 68%;
+}
