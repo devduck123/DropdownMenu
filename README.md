@@ -1,5 +1,6 @@
-# DropdownMenu
-## Clean Drop-Down Menu
+# Drop-down Menu
+
+Common CSS application
 
 - Credits to Kevin Powell from YouTube
 
